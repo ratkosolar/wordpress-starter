@@ -1,0 +1,7 @@
+<?php
+
+/**
+ * Sidebar template file
+ */
+
+?>
