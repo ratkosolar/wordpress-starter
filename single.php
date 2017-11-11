@@ -11,25 +11,32 @@
 <!-- Content Main -->
 <main class="content-main" role="main">
 	<div class="container">
-	<?php 
 
-	if (have_posts()):
+		<div class="row">
+			<div class="col-sm-9 content-main-col">
+			<?php 
 
-		// Content-Post
-	  while (have_posts()): the_post();
-			get_template_part('includes/template-parts/content', 'post');
-		endwhile;
+			if (have_posts()):
 
-	// No content found template
-	else :
-		get_template_part('includes/template-parts/content', 'not-found');
-	endif;
+				// Content-Post
+			  while (have_posts()): the_post();
+					get_template_part('includes/template-parts/content', 'post');
+				endwhile;
 
-	?>
+			// No content found template
+			else :
+				get_template_part('includes/template-parts/content', 'not-found');
+			endif;
+
+			?>
+			</div>
+			<div class="col-sm-3 content-sidebar-col">
+				<?php get_sidebar(); ?>
+			</div>
+		</div>
+
 	</div>
-
 </main>
 <!-- Content Main -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
