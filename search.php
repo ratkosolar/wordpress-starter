@@ -38,30 +38,7 @@
 
 		<div class="row">
 			<div class="col-sm-9 content-main-col">
-			<?php 
-
-			if (have_posts()):
-
-				// Content-Index
-			  while (have_posts()): the_post();
-					get_template_part('includes/template-parts/content', 'index');
-				endwhile;
-
-				// Pagination.
-				the_posts_pagination( 
-					array(
-						'prev_text' => __('Previous page', 'wordpress-starter'),
-						'next_text' => __('Next page', 'wordpress-starter'),
-					) 
-				);
-
-			// No content found template
-			else :
-				get_template_part('includes/template-parts/content', 'not-found');
-				get_search_form();
-			endif;
-
-			?>
+				<?php get_search_form(); ?>
 			</div>
 			<div class="col-sm-3 content-sidebar-col">
 				<?php get_sidebar(); ?>
